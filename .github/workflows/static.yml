@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="pikachu">
+        <div class="left-ear"></div>
+        <div class="right-ear"></div>
+        <div class="head">
+            <div class="left-eye"></div>
+            <div class="right-eye"></div>
+            <div class="nose"></div>
+            <div class="left-cheek"></div>
+            <div class="right-cheek"></div>
+            <div class="lips"></div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(#f2fcff, #b9e4f7);
+        overflow: hidden;
+    }
+
+    .pikachu {
+        position: relative;
+    }
+
+    @media (max-width: 600px) {
+        .pikachu {
+            transform: scale(0.5);
+        }
+    }
+
+    .head {
+        position: relative;
+        margin-top: 200px;
+        width: 370px;
+        height: 330px;
+        background: #ffd01c;
+        border: 4px solid #1b1919;
+        border-radius: 45%;
+        overflow: hidden;
+        box-shadow: inset -10px -8px 0 #d8851c;
+    }
+
+    .left-eye,
+    .right-eye {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background-color: #1b1919;
+        border-radius: 50%;
+        top: 40%;
+    }
+
+    .left-eye::before,
+    .right-eye::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        top: 10%;
+        animation: 0.2s infinite shaking;
+    }
+
+    .left-eye {
+        left: 20%;
+    }
+
+    .left-eye::before {
+        left: 40%;
+    }
+
+    .right-eye {
+        right: 20%;
+    }
+
+    .right-eye::before {
+        right: 40%;
+    }
+
+    .nose {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #1b1919;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-radius: 8px;
+        margin: auto;
+        top: 60%;
+    }
+
+    .left-cheek,
+    .right-cheek {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: #fb1412;
+        border: 4px solid #1b1919;
+        border-radius: 50%;
+        top: 60%;
+    }
+
+    .left-cheek {
+        left: -5%;
+    }
+
+    .right-cheek {
+        right: -5%;
+    }
+
+    .lips {
+        display: block;
+        position: relative;
+        margin: auto;
+        width: 1px;
+        height: 1px;
+        top: 60%;
+        z-index: 2;
+    }
+
+    .lips::after,
+    .lips::before {
+        position: absolute;
+        content: "";
+        top: -20px;
+        width: 50px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: inset 0px -4px 0 #1b1919;
+        background-color: #ffd01c;
+    }
+
+    .lips::before {
+        right: 0px;
+    }
+
+    .lips::after {
+        left: 0px;
+    }
+
+    .mouth {
+        position: relative;
+        height: 60px;
+        width: 60px;
+        margin: auto;
+        top: 60%;
+        border: 4px solid #1b1919;
+        border-radius: 0 0 50% 50%;
+        z-index: 1;
+        background-image: radial-gradient(circle at center 80%, #e93c4e 0%, #e93c4e 50%, #9e2d38 50%, #9e2d38 60%, #1b1919 60%, #1b1919 65%, #5c0009 65%);
+        background-position: 80% center;
+    }
+
+    .left-ear,
+    .right-ear {
+        position: absolute;
+        height: 450px;
+        width: 70px;
+        background: #ffd01c;
+        border-radius: 50%;
+        border: 4px solid #1b1919;
+        box-shadow: inset -4px -120px 0 #d8851c;
+    }
+
+    .right-ear {
+        right: 10px;
+        transform: rotate(12deg);
+        background-image: radial-gradient(circle at -100% 45%, #ffd01c 0%, #ffd01c 60%, black 60%);
+    }
+
+    .left-ear {
+        left: 10px;
+        transform: rotate(-50deg);
+        background-image: radial-gradient(circle at 200% 45%, #ffd01c 0%, #ffd01c 60%, black 60%);
+        animation: 5s 5s infinite wiggle;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+    }
+
+    @keyframes shaking {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(2%);
+        }
+    }
+
+    @keyframes wiggle {
+        0% {
+            transform: rotate(-50deg);
+        }
+
+        5% {
+            transform: rotate(-60deg);
+        }
+
+        10% {
+            transform: rotate(-50deg);
+        }
+
+        12% {
+            transform: rotate(-55deg);
+        }
+
+        15% {
+            transform: rotate(-50deg);
+        }
+
+        100% {
+            transform: rotate(-50deg);
+        }
+    }
+</style>
+</style>
+
+</html>
